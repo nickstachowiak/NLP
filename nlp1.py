@@ -1,3 +1,4 @@
+from time import timezone
 from textblob import TextBlob
 
 text = "Today is a beautiful day. Tomorrow looks like bad weather."
@@ -45,4 +46,40 @@ for sentence in blob.sentences:
 
 #hindi = blob.translate(to="hi")
 #print(hindi)
+
+from textblob import Word
+
+index = Word('index')
+cacti = Word('cacti')
+
+print(index.pluralize())
+print(cacti.singularize())
+
+animals = TextBlob('dog cat fish bird').words
+print(animals.pluralize())
+
+#Spell check and correction
+
+word = Word('theyr')
+
+print(word.spellcheck())
+
+print(word.correct())
+
+
+word1 = Word('studies')
+word2 = Word('varieties')
+
+print(word1.stem())
+print(word2.stem())
+
+#print(word1.lemmatize())
+#print(word2.lemmatize())
+
+# definitions, synonyms, antonyms
+
+happy = Word('happy')
+
+#print(happy.definitions)
+#print(happy.synsets)
 
